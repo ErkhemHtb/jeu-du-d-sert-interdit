@@ -1,27 +1,29 @@
-			Rapport de projet
+Note obtenue : 19,5 / 20
+
+Rapport de projet
 	
-1. Parties du sujet traitées :
-- Création d'un plateau de jeu avec différentes cases spéciales (Oasis, Mirage, Tunnel, etc.).
-- Placement aléatoire des pièces et indices sur le plateau de jeu.
-- Gestion des actions des joueurs : se déplacer (il faut cliquer sur « Bouger » puis utiliser les flèches directionnelles), explorer, déblayer, révéler les pièces et les indices.
-- Interaction avec les cases spéciales, telles que les Oasis et les Tunnels.
-- Une pièce se révèle quand ses deux indices sont trouvés
-- Possibilité de récupérer les pièces
-- Gestion de la fin du jeu lorsque toutes les pièces sont trouvées.
-- Gestion du niveau d'eau des joueurs et des conditions de victoire et défaite.
-- Actions du désert
-- Affichage et mise à jour du plateau de jeu en temps réel.
-- Gestion des tempêtes et des déplacements des cases.
+1. Parties du sujet traitÃ©es :
+- CrÃ©ation d'un plateau de jeu avec diffÃ©rentes cases spÃ©ciales (Oasis, Mirage, Tunnel, etc.).
+- Placement alÃ©atoire des piÃ¨ces et indices sur le plateau de jeu.
+- Gestion des actions des joueurs : se dÃ©placer (il faut cliquer sur Â«Â BougerÂ Â» puis utiliser les flÃ¨ches directionnelles), explorer, dÃ©blayer, rÃ©vÃ©ler les piÃ¨ces et les indices.
+- Interaction avec les cases spÃ©ciales, telles que les Oasis et les Tunnels.
+- Une piÃ¨ce se rÃ©vÃ¨le quand ses deux indices sont trouvÃ©s
+- PossibilitÃ© de rÃ©cupÃ©rer les piÃ¨ces
+- Gestion de la fin du jeu lorsque toutes les piÃ¨ces sont trouvÃ©es.
+- Gestion du niveau d'eau des joueurs et des conditions de victoire et dÃ©faite.
+- Actions du dÃ©sert
+- Affichage et mise Ã  jour du plateau de jeu en temps rÃ©el.
+- Gestion des tempÃªtes et des dÃ©placements des cases.
 
 2. Choix d'architecture :
-- La classe Desert représente le plateau de jeu et gère les actions globales (placement des pièces, gestion des cases, etc.).
-- La classe Case représente une case sur le plateau, avec ses propriétés (type de case, pièce, sable, etc.) et ses actions (explorer, ajouter du sable, etc.).
-- La classe Joueur représente un joueur et gère les actions propres aux joueurs (déplacement, interaction avec les cases, gestion du niveau d'eau, etc.).
-- Les classes TypeCase et Piece sont utilisées pour définir les types de cases et les pièces du jeu.
-- Nous avons utilisé le pattern Observateur pour mettre à jour l'affichage du jeu en fonction des actions des joueurs.
-- Nous avons également utilisé des exceptions personnalisées pour gérer les erreurs et faciliter le débogage.
+- La classe Desert reprÃ©sente le plateau de jeu et gÃ¨re les actions globales (placement des piÃ¨ces, gestion des cases, etc.).
+- La classe Case reprÃ©sente une case sur le plateau, avec ses propriÃ©tÃ©s (type de case, piÃ¨ce, sable, etc.) et ses actions (explorer, ajouter du sable, etc.).
+- La classe Joueur reprÃ©sente un joueur et gÃ¨re les actions propres aux joueurs (dÃ©placement, interaction avec les cases, gestion du niveau d'eau, etc.).
+- Les classes TypeCase et Piece sont utilisÃ©es pour dÃ©finir les types de cases et les piÃ¨ces du jeu.
+- Nous avons utilisÃ© le pattern Observateur pour mettre Ã  jour l'affichage du jeu en fonction des actions des joueurs.
+- Nous avons Ã©galement utilisÃ© des exceptions personnalisÃ©es pour gÃ©rer les erreurs et faciliter le dÃ©bogage.
 
-3. Problèmes connus :
-- Dans certaines circonstances, il était possible que les pièces soient placées sur des cases où d'autres éléments sont déjà présents (par exemple, un Oasis). Cela pouvait empêcher la révélation de la pièce même si les indices ont été trouvés. Nous avons résolu ce problème en modifiant la méthode placerPieces(). Nous nous sommes assurés que les pièces sont placées sur des cases vides en vérifiant que le type de case est TypeCase.NORMAL et qu'aucune autre pièce n'est déjà présente sur la case.
+3. ProblÃ¨mes connus :
+- Dans certaines circonstances, il Ã©tait possible que les piÃ¨ces soient placÃ©es sur des cases oÃ¹ d'autres Ã©lÃ©ments sont dÃ©jÃ  prÃ©sents (par exemple, un Oasis). Cela pouvait empÃªcher la rÃ©vÃ©lation de la piÃ¨ce mÃªme si les indices ont Ã©tÃ© trouvÃ©s. Nous avons rÃ©solu ce problÃ¨me en modifiant la mÃ©thode placerPieces(). Nous nous sommes assurÃ©s que les piÃ¨ces sont placÃ©es sur des cases vides en vÃ©rifiant que le type de case est TypeCase.NORMAL et qu'aucune autre piÃ¨ce n'est dÃ©jÃ  prÃ©sente sur la case.
 
-- Il était possible que le nombre de tunnels présents sur le plateau soit inférieur à deux. Un correctif a été proposé pour résoudre ce problème, nous avons créé une méthode qui place les tunnels et nous l’appelons dans le constructeur de Désert, mais il convient de tester davantage pour s'assurer que le problème est complètement résolu.
+- Il Ã©tait possible que le nombre de tunnels prÃ©sents sur le plateau soit infÃ©rieur Ã  deux. Un correctif a Ã©tÃ© proposÃ© pour rÃ©soudre ce problÃ¨me, nous avons crÃ©Ã© une mÃ©thode qui place les tunnels et nous lâ€™appelons dans le constructeur de DÃ©sert, mais il convient de tester davantage pour s'assurer que le problÃ¨me est complÃ¨tement rÃ©solu.
